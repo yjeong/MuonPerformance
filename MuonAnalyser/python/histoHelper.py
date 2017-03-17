@@ -282,4 +282,3 @@ def table(mchistList, errList, signal_hist, signal_err):
     errs['bkg'] = bkg_err
 
     return nums, errs
-
