@@ -31,19 +31,19 @@ process.MessageLogger.cout = cms.untracked.PSet(
 # Beware, in this area the wild character is not working!
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-      #'file:/pnfs/user/quark2/Work/muon_upgrade/CMSSW_9_0_0_pre4/src/MuonPerformance/MuonAnalyser/test/QCD_PU0_pre4_fixed01_UOS.txt'
+      'file:/pnfs/user/jlee/pfmuon/src/21211.0_TenMuExtendedE_0_200+TenMuExtendedE_0_200_pythia8_2023D4_GenSimHLBeamSpotFull+DigiFullTrigger_2023D4+RecoFullGlobal_2023D4+HARVESTFullGlobal_2023D4/step3.root'
       #'file:step3.root'
     ),
     skipBadFiles = cms.untracked.bool(True), 
 )
 
 #to run for entire sample
-dir = os.environ["CMSSW_BASE"]+'/src/MuonPerformance/MuonAnalyser/doc/9_0_0_pre4/rereco/QCD_PU0_pre4_fixed01'
-filelst = open(dir+".txt", "r")
+dir = os.environ["CMSSW_BASE"]+'/src/MuonPerformance/MuonAnalyser/doc/9_0_0_pre2/TenMu_'
+filelst = open(dir+"pu0.txt", "r")
 #filelst = open(dir+"pu200.txt", "r")
-process.source.fileNames = filelst.readlines()
+#process.source.fileNames = filelst.readlines()
 
-process.TFileService = cms.Service("TFileService",fileName = cms.string("out_QCDPU0.root"))
+process.TFileService = cms.Service("TFileService",fileName = cms.string("out.root"))
 
 process.load('SimMuon.MCTruth.muonAssociatorByHitsHelper_cfi')
 process.muonAssociatorByHitsHelper.useGEMs = cms.bool(True)
@@ -52,7 +52,13 @@ process.muonAssociatorByHitsHelper.stripSimLinkSrc = cms.InputTag("simSiPixelDig
 
 from Validation.RecoMuon.selectors_cff import muonTPSet
 process.MuonAnalyser = cms.EDAnalyzer("MuonAnalyser",
-    primaryVertex = cms.InputTag('offlinePrimaryVertices'),
+    primaryVertex     = cms.InputTag('offlinePrimaryVertices'),
+    primaryVertex1D   = cms.InputTag('offlinePrimaryVertices1D'),
+    primaryVertex1DBS = cms.InputTag('offlinePrimaryVertices1DWithBS'),
+    primaryVertex4D   = cms.InputTag('offlinePrimaryVertices4D'),
+    primaryVertex4DBS = cms.InputTag('offlinePrimaryVertices4DWithBS'),
+    primaryVertexBS   = cms.InputTag('offlinePrimaryVerticesWithBS'),
+    
     simLabel = cms.InputTag("mix","MergedTrackTruth"),
     simVertexCollection = cms.InputTag("g4SimHits"),
     muonLabel = cms.InputTag("muons"),

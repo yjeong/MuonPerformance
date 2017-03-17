@@ -1,2 +1,0 @@
-root://cms-xrdr.sdfarm.kr:1094///xrd/store/user/jlee/RelValTenMuExtendedE_0_200/crab_20161014_004717/161013_154753/0000/reco_1.root
-root://cms-xrdr.sdfarm.kr:1094///xrd/store/user/jlee/RelValTenMuExtendedE_0_200/crab_20161014_004717/161013_154753/0000/reco_2.root
