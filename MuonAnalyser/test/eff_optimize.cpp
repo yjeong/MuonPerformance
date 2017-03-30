@@ -350,5 +350,5 @@
 			}
 		}
 	}
-	cout<<"14 TeV"<<endl;//output word
+	cout<<"14 TeV"<<endl;
 }
