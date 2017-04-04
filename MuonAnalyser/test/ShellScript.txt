@@ -1,0 +1,9 @@
+echo -n "" > isovaluecutlist.txt
+
+for id in `echo "Loose Tight"`
+do for pu in `echo "PU0 PU140 PU200"`
+do for type in `echo "1 2"`
+    do python roccurve.py $pu $type $id >> isovaluecutlist.txt &
+done
+done
+done
