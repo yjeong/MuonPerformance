@@ -7,3 +7,7 @@ do for type in `echo "1 2"`
 done
 done
 done
+
+for roccurve.py
+
+python roccurve.py PU200 1 Tight
