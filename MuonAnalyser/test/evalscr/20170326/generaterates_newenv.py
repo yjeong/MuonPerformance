@@ -345,7 +345,7 @@ arrX = [
 #for strRelRe in ["relval", "rereco"]: 
 for strIsVtxCut in ["novtxcut", "withvtxcut"]: 
   for strRelRe in ["rereco"]: 
-    for strID in ["Loose", "Tight"]: 
+    for strID in ["Loose", "Tight", "LooseMod", "TightModNoIP"]: 
       for strTree in ["gen", "reco"]: 
         #for strIsoType in ["PF", "PUPPIWL", "PUPPINL", "PUPPICB"]: 
         for strIsoType in ["PF", "PUPPIWL", "PUPPINL", "PUPPINEWWL", "PUPPINEWNL"]: 
